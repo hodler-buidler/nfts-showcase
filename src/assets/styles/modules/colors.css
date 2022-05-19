@@ -1,0 +1,11 @@
+html {
+  --green-color-1: rgba(134, 234, 175, 1);
+  --green-color-2: rgba(16, 185, 129, 1);
+  --green-color-3: rgba(2,191,77, 1);
+  --dark-color-1: rgba(33, 36, 41, 1);
+  --dark-color-2: rgba(20, 26, 37, 1);
+  --white-color: rgba(255,255,255,1);
+  --light-color-1: rgba(197, 197, 198, 1);
+  --gray-color-dark-1: rgba(72, 75, 80, 1);
+  --red-color-1: rgba(251,93,71,1);
+}
