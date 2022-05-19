@@ -29,7 +29,7 @@ const ConnectWalletLayout: FC = ({ children }) => {
             >
               <span role="img" aria-label="lock">
                 🔓
-              </span>{' '}
+              </span>
               Unlock Wallet
             </UiButton>
           )}

@@ -1,5 +1,7 @@
-export { default as getChainById } from './getChainById';
-export { default as getCurrentChainId } from './getCurrentChainId';
-export { default as getInstallableWallets } from './getInstallableWallets';
-export { default as isAnyWalletSupported } from './isAnyWalletSupported';
-export { default as isChainIdSupported } from './isChainIdSupported';
+export * from './getChainById';
+export * from './getCurrentChainId';
+export * from './getInstallableWallets';
+export * from './isAnyWalletSupported';
+export * from './isChainIdSupported';
+export * from './isMainnetChainId';
+export * from './isTestnetChainId';

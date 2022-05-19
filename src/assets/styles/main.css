@@ -99,52 +99,51 @@ body {
 
 /* Typography utility classes */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 !important;
+  margin: 0;
   padding: 0;
   font-size: 100%;
-  color: var(--white-color) !important;
+  color: var(--white-color);
 }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
-  text-transform: uppercase;
   line-height: 1;
 }
 
 .heading-1 {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 800;
 }
 
 .heading-2 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 800;
 }
 
 .heading-3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
 .heading-4 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {
   .heading-1 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .heading-2 {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .heading-3 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .heading-4 {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 

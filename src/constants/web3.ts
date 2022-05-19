@@ -8,4 +8,6 @@ export const SUPPORTED_CHAINS: readonly Chain[] = Object.freeze([ETHEREUM_MAINNE
 
 export const DEFAULT_CHAIN = SUPPORTED_CHAINS[0];
 
+export const MAINNET_CHAINS: readonly Chain[] = Object.freeze([ETHEREUM_MAINNET_CHAIN]);
+
 export const METAMASK_REJECTED_TRANSACTION_CODE = 4001;

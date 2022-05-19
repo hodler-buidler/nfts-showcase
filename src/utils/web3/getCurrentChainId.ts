@@ -1,5 +1,5 @@
-function getCurrentChainId(): string | null {
-  return window?.ethereum?.chainId || null;
-}
+import { ChainId } from '@/typings/web3';
 
-export default getCurrentChainId;
+export function getCurrentChainId(): ChainId | null {
+  return (window?.ethereum?.chainId as ChainId) || null;
+}
