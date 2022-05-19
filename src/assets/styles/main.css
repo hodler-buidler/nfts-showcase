@@ -1,10 +1,17 @@
 @import './modules/colors.css';
 
 html {
+  --global-app-header-height: 120px;
+  --global-base-font-size: 16px;
+  --global-standard-vertical-offset: 48px;
+  --global-standard-horizontal-offset: 32px;
+
   --global-app-bg-color: var(--dark-color-1);
   --global-text-color: var(--light-color-1);
   --global-success-color: var(--green-color-3);
   --global-danger-color: var(--red-color-1);
+  --global-warning-color: var(--orange-color-1);
+  --global-info-color: var(--blue-color-1);
   --global-primary-color: var(--green-color-2);
   --global-alternative-color: var(--green-color-1);
 }
@@ -12,6 +19,7 @@ html {
 body {
   background: var(--global-app-bg-color);
   color: var(--global-text-color);
+  font-size: var(--global-base-font-size);
   width: 100%;
   height: 100%;
   font-family: sans-serif;
@@ -36,6 +44,14 @@ body {
 
 .text-color-success {
   color: var(--global-success-color);
+}
+
+.text-color-info {
+  color: var(--global-info-color);
+}
+
+.text-color-warning {
+  color: var(--global-warning-color);
 }
 
 /* Flex utility classes */

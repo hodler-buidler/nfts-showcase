@@ -1,4 +1,5 @@
 import '@/assets/styles/main.css';
+import { useWeb3 } from '@/state/web3';
 import 'normalize.css';
 import { FC } from 'react';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -9,6 +10,7 @@ import { useAppMessagesDisplay } from './hooks';
 import { Routes } from './routes';
 
 const App: FC = () => {
+  useWeb3();
   useAppMessagesDisplay();
 
   return (
