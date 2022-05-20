@@ -10,7 +10,6 @@ export function useAppMessagesDisplay() {
 
   useEffect(() => {
     if (!messages.length) return;
-    console.log(messages);
 
     printMessage({ ...messages[0] });
 

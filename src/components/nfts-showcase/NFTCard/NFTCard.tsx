@@ -36,7 +36,6 @@ const NFTCard: FC<NFTCardProps> = ({
       try {
         setIsMetaDataLoading(true);
         const data = await fetchMetaData(tickerId);
-        console.log(data);
         setMetaData(data);
       } catch (e) {
         console.error('Failed to load meta data');
@@ -55,7 +54,7 @@ const NFTCard: FC<NFTCardProps> = ({
     <WrapperStyled className={className}>
       <div className="nft-image">
         {isLoading ? (
-          <UiSkeleton width="140px" height="140px" borderRadius="50%" />
+          <UiSkeleton className="image-skeleton" borderRadius="50%" />
         ) : (
           <ImageStyled image={NFTImage} />
         )}
@@ -87,10 +86,29 @@ const WrapperStyled = styled.div`
 
   margin-top: 70px;
 
+  .image-skeleton {
+    width: 140px;
+    height: 140px;
+  }
+
   .nft-image {
     position: absolute;
     top: -70px;
     left: calc(50% - 70px);
+  }
+
+  @media screen and (max-width: 500px) {
+    margin-top: 50px;
+
+    .image-skeleton {
+      width: 100px;
+      height: 100px;
+    }
+
+    .nft-image {
+      top: -50px;
+      left: calc(50% - 50px);
+    }
   }
 `;
 
@@ -102,6 +120,11 @@ const ImageStyled = styled.div<{ image: string }>`
     background: var(--dark-color-2) url(${image}) center center no-repeat;
     background-size: cover;
   `}
+
+  @media screen and (max-width: 500px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 const HeadingStyled = styled.div`
@@ -115,6 +138,10 @@ const DescriptionStyled = styled.div`
   line-height: 1.45;
   font-size: 18px;
   margin-top: 16px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 
 export default NFTCard;

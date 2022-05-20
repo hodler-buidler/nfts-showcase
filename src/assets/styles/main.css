@@ -16,6 +16,12 @@ html {
   --global-alternative-color: var(--green-color-1);
 }
 
+@media screen and (max-width: 500px) {
+  html {
+    --global-app-header-height: 160px;
+  }
+}
+
 body {
   background: var(--global-app-bg-color);
   color: var(--global-text-color);

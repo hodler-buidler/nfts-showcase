@@ -29,6 +29,21 @@ const NFTsShowcaseStyled = styled.div`
   border-top: 1px solid var(--gray-color-dark-1);
   margin-top: 48px;
   padding-top: 48px;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 export default Page;

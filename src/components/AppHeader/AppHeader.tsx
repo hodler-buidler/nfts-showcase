@@ -62,6 +62,19 @@ const WrapperStyled = styled.header`
       opacity: 0.85;
     }
   }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 48px;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 0 24px;
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export default AppHeader;

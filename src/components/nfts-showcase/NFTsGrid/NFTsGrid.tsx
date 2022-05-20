@@ -55,6 +55,22 @@ const GridStyled = styled.div`
   .nft-grid-item {
     min-height: 260px;
   }
+
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 500px) {
+    grid-gap: 16px;
+  }
+
+  @media screen and (max-width: 441px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const EmptyMessageStyled = styled.div`
