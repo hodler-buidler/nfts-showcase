@@ -15,7 +15,7 @@ const ConnectWalletLayout: FC = ({ children }) => {
 
   return (
     <>
-      {isWalletConnected ? (
+      {isWalletConnected && isSupportedChainEnabled ? (
         children
       ) : (
         <WrapperStyled>

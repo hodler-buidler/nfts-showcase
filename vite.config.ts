@@ -4,6 +4,7 @@ import * as path from 'path'
 import istanbul from 'rollup-plugin-istanbul'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import vitePluginRequire from 'vite-plugin-require'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ mode }) => ({
@@ -14,6 +15,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [
+    vitePluginRequire(),
     tsconfigPaths(),
     react(),
     eslintPlugin(),

@@ -1,6 +1,7 @@
 import { UiSkeleton } from '@/components/ui';
 import { NFTMetaData } from '@/typings/nftsShowcase';
 import { FC, useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 export interface NFTCardProps {
@@ -20,6 +21,7 @@ const NFTCard: FC<NFTCardProps> = ({
 }) => {
   const [metaData, setMetaData] = useState(metaDataProp ? { ...metaDataProp } : null);
   const [, setIsMetaDataLoading] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   const isLoading = loading || !metaData;
 
@@ -27,9 +29,17 @@ const NFTCard: FC<NFTCardProps> = ({
   const NFTName = metaData?.name || '';
   const NFTDescription = metaData?.description || '';
 
+  const FALLBACK_META_DATA = {
+    name: tickerId,
+    description: 'The brightest example of NFTs world',
+    image: 'https://i.imgur.com/4ZI56v7.png',
+  };
+
   useEffect(() => {
-    loadMetaData();
-  }, []);
+    if (inView) {
+      loadMetaData();
+    }
+  }, [inView]);
 
   async function loadMetaData(): Promise<void> {
     if (fetchMetaData && tickerId) {
@@ -37,13 +47,13 @@ const NFTCard: FC<NFTCardProps> = ({
         setIsMetaDataLoading(true);
         const data = await fetchMetaData(tickerId);
         setMetaData(data);
+
+        if (!data || !data.name) {
+          setMetaData(FALLBACK_META_DATA);
+        }
       } catch (e) {
         console.error('Failed to load meta data');
-        setMetaData({
-          name: tickerId,
-          description: 'The brightest example of NFTs world',
-          image: 'https://i.imgur.com/4ZI56v7.png',
-        });
+        setMetaData(FALLBACK_META_DATA);
       } finally {
         setIsMetaDataLoading(false);
       }
@@ -51,7 +61,7 @@ const NFTCard: FC<NFTCardProps> = ({
   }
 
   return (
-    <WrapperStyled className={className}>
+    <WrapperStyled ref={ref} className={className}>
       <div className="nft-image">
         {isLoading ? (
           <UiSkeleton className="image-skeleton" borderRadius="50%" />

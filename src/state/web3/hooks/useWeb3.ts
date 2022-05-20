@@ -22,7 +22,6 @@ export function useWeb3() {
 
     // It seems like window.ethereum object takes time on page load to produce values
     setTimeout(() => {
-      dispatch(setIsSupportedChainEnabled(isChainIdSupported(getCurrentChainId())));
       dispatch(setConnectedAddress(ethereum?.selectedAddress || ''));
       dispatch(setIsWalletConnecting(false));
     }, 1000);
@@ -48,6 +47,7 @@ export function useWeb3() {
   }, []);
 
   function handleConnect() {
+    dispatch(setIsSupportedChainEnabled(isChainIdSupported(getCurrentChainId())));
     dispatch(setIsEthereumProviderConnected(!!ethereum?.isConnected()));
   }
 

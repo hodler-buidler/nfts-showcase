@@ -2,7 +2,6 @@ import NFTCard from '@/components/nfts-showcase/NFTCard/NFTCard';
 import { useNFTsShowcase } from '@/hooks/nfts-showcase';
 import { numberToArray } from '@/utils/common';
 import { FC, useEffect } from 'react';
-import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 
 const MIN_LOADING_CARDS_DISPLAY = 8;
@@ -31,13 +30,12 @@ const NFTsGrid: FC = () => {
           ) : (
             <>
               {NFTsIds.map((entity) => (
-                <LazyLoad key={entity.id} once>
-                  <NFTCard
-                    tickerId={entity.id}
-                    fetchMetaData={loadNFTMetaData}
-                    className="nft-grid-item"
-                  />
-                </LazyLoad>
+                <NFTCard
+                  key={entity.id}
+                  tickerId={entity.id}
+                  fetchMetaData={loadNFTMetaData}
+                  className="nft-grid-item"
+                />
               ))}
             </>
           )}
