@@ -1,4 +1,4 @@
-# NFTs showcase Blockswap
+# NFTs showcase
 
 ### How to run?
 1. ```yarn install```
