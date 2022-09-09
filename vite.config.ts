@@ -8,6 +8,7 @@ import vitePluginRequire from 'vite-plugin-require'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ mode }) => ({
+  base: import.meta?.env?.PROD ? '/nfts-showcase/' : './',
   resolve: {
     alias: {
       process: path.resolve(__dirname, 'polyfills/process-es6.js'),
