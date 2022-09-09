@@ -1,11 +1,5 @@
 # NFTs showcase Blockswap
 
-### DEMO:
-http://nikitosgolubev.github.io/
-
-### CODE:
-https://github.com/NikitosGolubev/nfts-showcase
-
 ### How to run?
 1. ```yarn install```
 2. ```yarn dev```
